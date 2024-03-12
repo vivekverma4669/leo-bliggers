@@ -96,7 +96,7 @@ app.post('/login', async (req, res) => {
 app.use(autentication);
 app.use('/blogs', blogRouter);
   
-const Port=process.env.PORT  || 5000;
+const Port=process.env.PORT  || 7000;
 
 app.listen(Port, async ()=>{
 //   await connection;
