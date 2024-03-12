@@ -27,17 +27,17 @@ const main = async ()=>{
 }
 main();
 
-// app.get('/', (req,res)=>{
-//     res.send({'app runing u are on home page now ': req.headers});
-// });
-
-
-const path = require("path");
-app.get("/", (req, res) => {
-app.use(express.static(path.resolve(__dirname, "front-end", "build")));
-res.sendFile(path.resolve(__dirname, "front-end", "build", "index.html"));
-// res.send('heelo');
+app.get('/', (req,res)=>{
+    res.send({'app runing u are on home page now ': req.headers});
 });
+
+
+// const path = require("path");
+// app.get("/", (req, res) => {
+// app.use(express.static(path.resolve(__dirname, "front-end", "build")));
+// res.sendFile(path.resolve(__dirname, "front-end", "build", "index.html"));
+// // res.send('heelo');
+// });
 
 app.post('/signup', async (req,res)=>{
     const { name , email , password} = req.body;
