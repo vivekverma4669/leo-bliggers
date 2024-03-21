@@ -13,7 +13,7 @@ const MyBlogs = () => {
   const fetchBlogs = async (type) => {
     setLoading(true);
     try {
-      const response = await axios.get(`${window.location.origin}/blogs/my/?type=${type}`, {
+      const response = await axios.get(`https://leo-bliggers.onrender.com/blogs/my/?type=${type}`, {
         headers: {
           Authorization: `Bearer ${token}`
         },
@@ -51,7 +51,7 @@ const MyBlogs = () => {
     const confirmDelete = window.confirm("Are you sure you want to delete this blog?");
     if (confirmDelete) {
       try {
-        await axios.delete(`https://grumpy-hare-sunbonnet.cyclic.app/blogs/delete/${id}`, {
+        await axios.delete(`https://leo-bliggers.onrender.com/blogs/delete/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

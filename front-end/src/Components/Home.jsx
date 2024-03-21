@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
 
-  const { token } = useContext(AuthContext);
+  const { token } = useContext(AuthContext); 
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(false);
   const [type, setType] = useState("");
@@ -14,7 +14,7 @@ const Home = () => {
   const fetchBlogs = async (type) => {
     setLoading(true);         
     try {
-      const response = await axios.get(`${window.location.origin}/blogs?type=${type}`, {
+      const response = await axios.get(`https://leo-bliggers.onrender.com/blog10?type=${type}`, {
         headers: {
           Authorization: `Bearer ${token}`
         },

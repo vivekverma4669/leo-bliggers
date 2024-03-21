@@ -21,7 +21,7 @@ const SignUp = () => {
     setFormData(true);
     e.preventDefault();
     try {
-      const response = await axios.post(`${window.location.origin}/signUp`, formData);
+      const response = await axios.post(`https://leo-bliggers.onrender.com/signUp`, formData);
       console.log(response.data);
       setFormData({ name: '', email: '', password: '' });
       alert('Account Created ✅  Login now ');

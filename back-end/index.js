@@ -7,13 +7,9 @@ const blogRouter = require('./Router/blog.Routes');
 const {autentication}= require('./middleware/authentication');
 const cors = require('cors');
 const app= express();
-// const path = require('path');
-// const path = require('path');
 app.use(express.json());
 app.use(cors());
 require('dotenv').config();
-
-
 
 
 const main = async ()=>{
@@ -23,9 +19,9 @@ const main = async ()=>{
     } catch (error) {
         console.log(error);
     }
-    
 }
 main();
+
 
 app.get('/', (req,res)=>{
     res.send({'app runing u are on home page now ': req.headers});
@@ -81,6 +77,28 @@ app.post('/login', async (req, res) => {
     catch (error) {
         console.error(error);
         res.status(500).json({ msg: 'Server error' });
+    }
+});
+
+
+
+
+// form home page
+
+const BlogModel = require('../back-end/models/Blog.module');
+app.get('/blog10', async (req, res) => {
+    const { type } = req.query;
+    let blogs;
+    try {
+        if (type) {
+            blogs = await BlogModel.find({ type }).limit(10); // Limiting to 10 blogs
+        } else {
+            blogs = await BlogModel.find().limit(10); // Limiting to 10 blogs
+        }
+        res.send(blogs);
+    } catch(error) {
+        console.log(error);
+        res.status(500).send('Internal Server Error');
     }
 });
 
