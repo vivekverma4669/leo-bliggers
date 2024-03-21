@@ -26,7 +26,7 @@ const Login = () => {
     e.preventDefault();
     try {
 
-      const response = await axios.post( `https://leo-bliggers.onrender.com/login`, formData);
+      const response = await axios.post(`https://leo-bliggers.onrender.com/login`, formData);
       const { token } = response.data;
       const { email } = formData;
       console.log(response.data);

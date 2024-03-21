@@ -77,9 +77,9 @@ const MyBlogs = () => {
       <div style={{ display: 'flex', flexDirection: 'column', rowGap: '30px', padding: '70px', justifyContent: 'center' }}>
         {!loading ?
           blogs.map((blog) => (
-            <div key={blog._id} style={{ width: '100%', border: '2px solid black', display: 'flex', textAlign: 'center', borderRadius: '10px' }}>
+            <div key={blog._id} style={{ width: '100%', border: '2px solid black', display: 'flex', textAlign: 'center', borderRadius: '10px' , height :'250px' }}>
               <Link to={`/blogDetail/${blog._id}`}>
-                <img src={blog.imageUrl} style={{ height: '100%', width: '390px' }} />
+                <img src={blog.imageUrl} style={{ height: '100%' , width :'auto' }} />
               </Link>
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <h2 style={{ color: 'teal' }}> {blog.title}</h2>
