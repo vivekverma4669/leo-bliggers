@@ -8,14 +8,14 @@ const Blogs = () => {
 
 
   const { token } = useContext(AuthContext);
-  const [blogs, setBlogs] = useState([]);
+  const [blogs, setBlogs] = useState([]); 
   const [loading, setLoading] = useState(false);
   const [type, setType] = useState("");
 
   const fetchBlogs = async (type) => {
     setLoading(true);
     try {  //https://grumpy-hare-sunbonnet.cyclic.app
-      const response = await axios.get(`${window.location.origin}./blogs?type=${type}`, {
+      const response = await axios.get(`https://leo-bliggers.onrender.com/blogs?type=${type}`, {
         headers: {
           Authorization: `Bearer ${token}`
         },

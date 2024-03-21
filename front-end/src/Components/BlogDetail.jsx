@@ -18,7 +18,7 @@ const BlogDetail = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await axios.get(`https://grumpy-hare-sunbonnet.cyclic.app/blogs/${id}`, {
+        const response = await axios.get(`https://leo-bliggers.onrender.com/blogs/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -41,7 +41,7 @@ const BlogDetail = () => {
     const confirmDelete = window.confirm("Are you sure you want to delete this blog?");
     if (confirmDelete) {
       try {
-        await axios.delete(`https://grumpy-hare-sunbonnet.cyclic.app/blogs/delete/${id}`, {
+        await axios.delete(`https://leo-bliggers.onrender.com/blogs/delete/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -75,7 +75,7 @@ const BlogDetail = () => {
       const cloudinaryData = await cloudinaryResponse.json();
       const imageUrl = cloudinaryData.secure_url;
 
-      const response = await axios.post(`https://grumpy-hare-sunbonnet.cyclic.app/blogs/update/${id}`, {
+      const response = await axios.post(`https://leo-bliggers.onrender.com/blogs/update/${id}`, {
         title: formData.title,
         content: formData.content,
         type: formData.type,
