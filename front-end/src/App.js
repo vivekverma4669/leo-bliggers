@@ -5,6 +5,7 @@ import AllRoutes from './Components/AllRoutes';
 import { AuthProvider } from './Components/AuthContext';
 import Navbar from './Components/Nav';
 
+
 function App() {
   return (
     <BrowserRouter>
