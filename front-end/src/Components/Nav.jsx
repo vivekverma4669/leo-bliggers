@@ -51,7 +51,7 @@ import { useContext } from "react";
         </ul>
 
        <div   id="log" style={{marginRight: "30px",  display : menuOpen? "block" : ""}} >
-       <h3>  {user==''?   <NavLink to="/login" style={{borderRadius :"5px", padding:'10px'}}> Login</NavLink>  :  <p> {user}  <br/> <button onClick={logout}> log out </button> </p> }  </h3> 
+       <h3>  {user==''?   <NavLink to="/login" style={{borderRadius :"5px", padding:'10px'}}> Login</NavLink>  :  <p> {user}  <br/> <button onClick={logout} style={{background :'grey' , color:'white' , padding :'2px ' , borderRadius :'5px' }}> log out </button> </p> }  </h3> 
        </div>
       
     </nav>                   

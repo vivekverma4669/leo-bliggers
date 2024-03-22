@@ -4,10 +4,11 @@ import Footer from './Components/Footer';
 import AllRoutes from './Components/AllRoutes';
 import { AuthProvider } from './Components/AuthContext';
 import Navbar from './Components/Nav';
-
+import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
   return (
+    <ChakraProvider>
     <BrowserRouter>
     <AuthProvider>
     <div className="App">
@@ -19,6 +20,7 @@ function App() {
     </div>
     </AuthProvider>
     </BrowserRouter>
+    </ChakraProvider>
   );
 }
 
